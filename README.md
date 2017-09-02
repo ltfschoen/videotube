@@ -12,6 +12,7 @@ Videotube
   * [Chapter 4 - Configure Routes and Model View Controller (MVC)](#chapter-4)
   * [Chapter 5 - Configure Views with Bootstrap Theme](#chapter-5)
   * [Chapter 6 - Configure View Partials](#chapter-6)
+  * [Chapter 7 - Configure Live Reload](#chapter-7)
 
 ## Chapter 0 - Setup Dependencies <a id="chapter-0"></a>
 
@@ -122,6 +123,7 @@ Videotube
 * Guides and Troubleshooting
   * https://stackoverflow.com/questions/30141740/rubymine-rails-server-launcher-wasnt-found-in-the-project/44922746#44922746
   * https://stackoverflow.com/questions/5816419/intellij-does-not-show-project-folders/39500351#39500351
+  * Add to Gitignore `git rm -f .idea/workspace.xml`
 
 ## Chapter 4 - Configure Routes and Model View Controller (MVC) <a id="chapter-4"></a>
 
@@ -142,3 +144,32 @@ Videotube
 ## Chapter 6 - Configure Views Partials <a id="chapter-6"></a>
 
 * Add [Partials](http://guides.rubyonrails.org/layouts_and_rendering.html)
+
+## Chapter 7 - Configure Live Reload <a id="chapter-7"></a>
+
+* Add [Guard LiveReload](https://github.com/guard/guard)
+    ```
+    echo "gem 'guard', :group => [:development, :test]" >> Gemfile; bundle install;
+    echo "gem 'rb-readline', :group => [:development, :test]" >> Gemfile; bundle install;
+    echo "gem 'guard-rspec', require: false, :group => [:development, :test]" >> Gemfile; bundle install;
+    echo "gem 'guard-livereload', '~> 2.5', require: false, :group => [:development, :test]" >> Gemfile; bundle install;
+    ```
+
+* Generate Empty Guardfile
+    ```
+    bundle exec guard init rspec
+    ```
+
+* Customise Guardfile by reading the [Guard DSL on its Wiki](https://github.com/guard/guard/wiki/Guardfile-DSL---Configuring-Guard)
+
+* Install, Enable, and Run LiveReload Extension [LiveReload browser extension](http://livereload.com/extensions/#installing-sections)
+
+* Copy [example Guard LiveReload code](https://github.com/guard/guard-livereload) into your Guardfile
+
+* Run Rails Server
+
+* Run Guard `bundle exec guard` in separate Terminal tab
+
+* Open http://localhost:3000. Turn on LiveReload in browser by clicking the browser extension icon.
+
+* Modify a .html.erb file in the views directory and wait for the webpage to automatically refresh

@@ -56,3 +56,8 @@ gem 'rspec-rails', :group => [:development, :test]
 gem 'jquery-rails'
 gem 'bootstrap', '~> 4.0.0.beta'
 
+# https://github.com/guard/guard-rspec
+gem 'guard-rspec', require: false, :group => [:development, :test]
+gem 'guard', :group => [:development, :test]
+gem 'rb-readline', :group => [:development, :test]
+gem 'guard-livereload', '~> 2.5', require: false, :group => [:development, :test]
