@@ -1,1 +1,1 @@
-rvm --create use ruby-2.4.1; rvm rvmrc trust DIR; rvm reload;
+rvm --ruby-version use 2.4.1@videotube; rvm reload;
