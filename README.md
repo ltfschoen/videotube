@@ -53,6 +53,11 @@ Videotube
         rvm --ruby-version use 2.4.1@videotube
         ```
 
+    * Setup .rvmrc
+        ```
+        echo "rvm --create use ruby-2.4.1; rvm reload;" > .rvmrc
+        ```
+
     * Check Ruby version and location installed
         ```
         ruby -v; which ruby
