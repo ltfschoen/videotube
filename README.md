@@ -124,16 +124,16 @@ Videotube
 
 ## Chapter 4 - Configure Routes and Model View Controller (MVC) <a id="chapter-4"></a>
 
-    * Check [Routes](http://guides.rubyonrails.org/routing.html)
-        ```
-        rails routes
-        ```
+* Check [Routes](http://guides.rubyonrails.org/routing.html)
+    ```
+    rails routes
+    ```
 
-    * Add root route `root to: 'pages#index'` to routes.rb
+* Add root route `root to: 'pages#index'` to routes.rb
 
 ## Chapter 5 - Configure Views with Bootstrap Theme <a id="chapter-5"></a>
 
-    * Add [Responsive meta tag]([Bootstrap components](https://getbootstrap.com/docs/4.0/getting-started/introduction/)
-) to layout.html.erb
-    * Add [Bootstrap theme](https://startbootstrap.com/)
-    * Update views with [Bootstrap components](https://getbootstrap.com/docs/4.0/getting-started/introduction/)
+* Add to layout.html.erb [Responsive meta tag]([Bootstrap components](https://getbootstrap.com/docs/4.0/getting-started/introduction/)
+)
+* Add [Bootstrap theme](https://startbootstrap.com/)
+* Update views with [Bootstrap components](https://getbootstrap.com/docs/4.0/getting-started/introduction/)
