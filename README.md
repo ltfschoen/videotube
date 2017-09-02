@@ -180,7 +180,7 @@ Videotube
 
 * Modify a .html.erb file in the views directory and wait for the webpage to automatically refresh
 
-## Chapter 8 - Configure Mailer for Static Pages<a id="chapter-8"></a>
+## Chapter 8 - Configure Mailer and Dotenv for Static Pages<a id="chapter-8"></a>
 
 * Check Routes
     ```
@@ -190,3 +190,16 @@ Videotube
     ```
     <%= link_to "Contact", pages_contact_path, class: "nav-link" %>
     ```
+
+* Add [Dotenv Rails](https://github.com/bkeepers/dotenv). Move above any Gems that depend on Dotenv
+    ```
+    echo "gem 'dotenv-rails', require: 'dotenv/rails-now', groups: [:development, :test]" >> Gemfile
+    bundle install
+    printf "# Mailer settings\nMAILER_FROM='ltfschoen@gmail.com'\nGMAIL_USERNAME='ltfschoen@gmail.com'\nGMAIL_PASSWORD=''" >> .env
+    ```
+
+* Test it works in a View
+    ```
+    <%= ENV['GMAIL_USERNAME'] %>
+    ```
+* Restart Rails server

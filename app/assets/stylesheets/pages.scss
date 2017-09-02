@@ -2,6 +2,14 @@
 
 body {
   padding-top: 54px;
+
+  nav {
+    .container {
+      .username {
+        color: yellow;
+      }
+    }
+  }
 }
 
 @media (min-width: 992px) {
