@@ -10,7 +10,8 @@ Videotube
   * [Chapter 2 - Run RSpec Tests](#chapter-2)
   * [Chapter 3 - Configure IntelliJ IDE](#chapter-3)
   * [Chapter 4 - Configure Routes and Model View Controller (MVC)](#chapter-4)
-  * [Chapter 5 - Configure Views with Bootstrap Theme](#chapter-4)
+  * [Chapter 5 - Configure Views with Bootstrap Theme](#chapter-5)
+  * [Chapter 6 - Configure View Partials](#chapter-6)
 
 ## Chapter 0 - Setup Dependencies <a id="chapter-0"></a>
 
@@ -137,3 +138,7 @@ Videotube
 )
 * Add [Bootstrap theme](https://startbootstrap.com/)
 * Update views with [Bootstrap components](https://getbootstrap.com/docs/4.0/getting-started/introduction/)
+
+## Chapter 6 - Configure Views Partials <a id="chapter-6"></a>
+
+* Add [Partials](http://guides.rubyonrails.org/layouts_and_rendering.html)
