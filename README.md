@@ -13,6 +13,7 @@ Videotube
   * [Chapter 5 - Configure Views with Bootstrap Theme](#chapter-5)
   * [Chapter 6 - Configure View Partials](#chapter-6)
   * [Chapter 7 - Configure Live Reload](#chapter-7)
+  * [Chapter 8 - Configure Mailer for Static Pages](#chapter-8)
 
 ## Chapter 0 - Setup Dependencies <a id="chapter-0"></a>
 
@@ -109,7 +110,7 @@ Videotube
     * Note: Generate RSpec instead ot Test Unit files
     * Note: Generate JavaScript instead of CoffeeScript
     ```
-    rails g controller Pages index about \
+    rails g controller Pages index about contact \
         --stylesheet-engine=scss --test-framework=rspec \
         --javascript-engine=js
     ```
@@ -178,3 +179,14 @@ Videotube
 * Open http://localhost:3000. Turn on LiveReload in browser by clicking the browser extension icon.
 
 * Modify a .html.erb file in the views directory and wait for the webpage to automatically refresh
+
+## Chapter 8 - Configure Mailer for Static Pages<a id="chapter-8"></a>
+
+* Check Routes
+    ```
+    rails routes
+    ```
+* Add Rails URL Helper to link to Contact page
+    ```
+    <%= link_to "Contact", pages_contact_path, class: "nav-link" %>
+    ```
