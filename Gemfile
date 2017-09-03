@@ -62,3 +62,5 @@ gem 'guard', :group => [:development, :test]
 gem 'rb-readline', :group => [:development, :test]
 gem 'guard-livereload', '~> 2.5', require: false, :group => [:development, :test]
 gem 'dotenv-rails', require: 'dotenv/rails-now', groups: [:development, :test]
+gem 'simple_form'
+gem 'mail_form'

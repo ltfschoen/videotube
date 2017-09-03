@@ -182,6 +182,9 @@ Videotube
 
 ## Chapter 8 - Configure Mailer and Dotenv for Static Pages<a id="chapter-8"></a>
 
+* Guides
+    * [Contact Form using Mail Form](https://github.com/plataformatec/simple_form/wiki/Contact-Form-using-Mail_Form)
+
 * Check Routes
     ```
     rails routes
@@ -193,8 +196,8 @@ Videotube
 
 * Add [Dotenv Rails](https://github.com/bkeepers/dotenv). Move above any Gems that depend on Dotenv
     ```
-    echo "gem 'dotenv-rails', require: 'dotenv/rails-now', groups: [:development, :test]" >> Gemfile
-    bundle install
+    echo "gem 'dotenv-rails', require: 'dotenv/rails-now', groups: [:development, :test]" >> Gemfile;
+    bundle install;
     printf "# Mailer settings\nMAILER_FROM='ltfschoen@gmail.com'\nGMAIL_USERNAME='ltfschoen@gmail.com'\nGMAIL_PASSWORD=''" >> .env
     ```
 
@@ -203,3 +206,83 @@ Videotube
     <%= ENV['GMAIL_USERNAME'] %>
     ```
 * Restart Rails server
+
+* Add [Mail Form](https://github.com/plataformatec/mail_form)
+    ```
+    echo "gem 'mail_form'" >> Gemfile;
+    bundle install;
+    ```
+
+* Add [Simple Form](https://github.com/plataformatec/simple_form/wiki/Contact-Form-using-Mail_Form)
+    ```
+    echo "gem 'simple_form'" >> Gemfile;
+    bundle install;
+    rails generate simple_form:install --bootstrap
+    ```
+
+    * Note: Below is output to screen
+        ```
+              create  config/initializers/simple_form.rb
+              create  config/initializers/simple_form_bootstrap.rb
+               exist  config/locales
+              create  config/locales/simple_form.en.yml
+              create  lib/templates/erb/scaffold/_form.html.erb
+        ===============================================================================
+
+          Be sure to have a copy of the Bootstrap stylesheet available on your
+          application, you can get it on http://getbootstrap.com/.
+
+          Inside your views, use the 'simple_form_for' with one of the Bootstrap form
+          classes, '.form-horizontal' or '.form-inline', as the following:
+
+            = simple_form_for(@user, html: { class: 'form-horizontal' }) do |form|
+        ```
+
+* Generate Controller for Contacts
+    ```
+    rails g controller Contacts new create \
+        --stylesheet-engine=scss --test-framework=rspec \
+        --javascript-engine=js
+    ```
+
+* Generate Model for Contacts
+    ```
+    rails g model contact name:string email:uniq message:text
+    ```
+
+* Migrate the Database Schema
+    ```
+    rails db:migrate RAILS_ENV=development
+    ```
+
+* Check Rails server runs
+
+* Open PostgreSQL application
+    ```
+    open -a "Postgres"
+    ```
+
+* Within PostgreSQL Shell check the database table
+    ```
+
+    # Run PostgreSQL
+    psql
+
+    # Show Help
+    \h
+
+    # Show List of Databases
+    \l
+
+    # Change between Databases
+    \c videotube_development
+
+    # Show List of Tables
+    \d
+
+    # Query Table
+    SELECT * FROM contacts;
+
+    # Quit
+    \q
+    ```
