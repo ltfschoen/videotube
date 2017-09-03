@@ -22,3 +22,6 @@
 
 # IntelliJ IDE
 /.idea/workspace.xml
+
+# Dotenv
+.env
