@@ -205,6 +205,9 @@ Videotube
     ```
     <%= ENV['GMAIL_USERNAME'] %>
     ```
+
+* Add `.env` file to Gitignore
+
 * Restart Rails server
 
 * Add [Mail Form](https://github.com/plataformatec/mail_form)
@@ -286,3 +289,33 @@ Videotube
     # Quit
     \q
     ```
+
+* Copy [Example](https://github.com/plataformatec/simple_form/wiki/Contact-Form-using-Mail_Form) code into Routes, Controller, Models, and Views
+
+    * Add whitelisted parameters to Contacts Controller
+    * Remove the `contact` action from the Pages Controller
+    * Update Routes to point GET requests from URL `'/pages/contact', to: 'contacts#new'`
+    * Add redirect `get "/contacts" => redirect("/contacts/new")`
+    * Add padding to contacts/new View
+    * Configure [Flash](http://guides.rubyonrails.org/action_controller_overview.html) and create Partial for Flash messages
+
+* [Configure Action Mailer Configuration for Gmail](http://guides.rubyonrails.org/action_mailer_basics.html#action-mailer-configuration-for-gmail)
+    * Add to config/environments/development.rb
+    ```
+    config.action_mailer.delivery_method = :smtp
+
+    config.action_mailer.smtp_settings = {
+      user_name: ENV['GMAIL_USERNAME'],
+      password: ENV['GMAIL_PASSWORD'],
+      domain: 'gmail.com',
+      address: 'smtp.gmail.com',
+      port: 587,
+      host: 'localhost:3000',
+      authentication: 'login', # plain
+      enable_starttls_auto: true
+    }
+    ```
+
+* Go to http://localhost:3000/contacts/new. Submit the Contact Form.
+* Watch the Rails Server logs
+* Check your email

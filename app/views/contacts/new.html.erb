@@ -1,2 +1,13 @@
-<h1>Contacts#new</h1>
-<p>Find me in app/views/contacts/new.html.erb</p>
+<div class="simple-form-container">
+  <h3>Send message</h3>
+
+  <%= simple_form_for @contact, :html => {:class => 'form-horizontal' } do |f| %>
+      <%= f.input :name, :required => true %>
+      <%= f.input :email, :required => true %>
+      <%= f.input :message, :as => :text, :required => true %>
+      <div class="form-actions">
+        <%= f.button :submit, 'Send message', :class=> "btn btn-primary" %>
+      </div>
+  <% end %>
+</div>
+
