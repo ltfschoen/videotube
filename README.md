@@ -49,6 +49,11 @@ Videotube
         rvm gemset create videotube
         ```
 
+    * Setup Rails in global Gemset
+        ```
+        rvm @global do gem install rails
+        ```
+
     * Set up RVM workflow with Gemsets to create a .ruby-version file and a .ruby-gemset file for the project so RVM will detect the ruby version and gem set automatically
         ```
         rvm --ruby-version use 2.4.1@videotube
