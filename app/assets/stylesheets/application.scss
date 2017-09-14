@@ -5,11 +5,46 @@
 // Reference: https://pixabay.com/en/ball-http-www-crash-administrator-63527/
 .logo {
   display: inline-block;
-  text-align: center;
   background: image-url("bg_black.jpg");
+  background-color: #000;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: calc(100% + 20px) calc(100% - 20px);
   transition: all 2s ease;
+  color: #c7f734;
 }
 
 .logo:hover {
-  background: image-url("bg_green.jpg")
+  background-position: calc(100% - 20px) calc(100% + 20px);
+  transition: all 2s ease;
+}
+
+@media screen and (max-width: 775px) {
+  .logo {
+    display: none !important;
+  }
+}
+
+.navbar {
+  padding: 0px;
+}
+
+.tech {
+  text-align: center;
+  padding: 1rem;
+}
+
+// Reference: https://commons.wikimedia.org
+#react { width: 100%; }
+#ruby { width: 55%; }
+#python { width: 55%; }
+#node { width: 100%; }
+#ethereum { width: 60%; }
+#rails { width: 100%; }
+#sass { width: 100%; }
+
+.py-5 {
+  padding-top: 0.5rem !important;
+  padding-bottom: 0.5rem !important;
 }
