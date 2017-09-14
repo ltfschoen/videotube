@@ -64,3 +64,5 @@ gem 'guard-livereload', '~> 2.5', require: false, :group => [:development, :test
 gem 'dotenv-rails', require: 'dotenv/rails-now', groups: [:development, :test]
 gem 'simple_form'
 gem 'mail_form'
+gem 'nokogiri' # required by inline_svg
+gem 'inline_svg'

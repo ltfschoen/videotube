@@ -14,6 +14,7 @@ Videotube
   * [Chapter 6 - Configure View Partials](#chapter-6)
   * [Chapter 7 - Configure Live Reload](#chapter-7)
   * [Chapter 8 - Configure Mailer for Static Pages](#chapter-8)
+  * [Chapter 9 - Deploy Specific Branch to Heroku](#chapter-9)
 
 ## Chapter 0 - Setup Dependencies <a id="chapter-0"></a>
 
@@ -273,7 +274,7 @@ Videotube
 * Within PostgreSQL Shell check the database table
     ```
 
-    # Run PostgreSQL
+    # Run PostgreSQL (or `rails db`, [Link](http://guides.rubyonrails.org/command_line.html))
     psql
 
     # Show Help
@@ -324,3 +325,12 @@ Videotube
 * Go to http://localhost:3000/contacts/new. Submit the Contact Form.
 * Watch the Rails Server logs
 * Check your email
+
+
+## Chapter 9 - Deploy Specific Branch to Heroku<a id="chapter-9"></a>
+
+```
+heroku login
+heroku git:remote -a ceenos
+git push heroku ceenos:master
+```

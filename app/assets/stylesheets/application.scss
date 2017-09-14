@@ -1,3 +1,15 @@
 @import 'bootstrap';
 @import 'pages';
 @import 'contacts';
+
+// Reference: https://pixabay.com/en/ball-http-www-crash-administrator-63527/
+.logo {
+  display: inline-block;
+  text-align: center;
+  background: image-url("bg_black.jpg");
+  transition: all 2s ease;
+}
+
+.logo:hover {
+  background: image-url("bg_green.jpg")
+}
